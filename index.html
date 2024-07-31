@@ -9,9 +9,7 @@
   <body>
     <nav>
       <header>
-        <div class="logo-icon">
-          <img src="assets/ariflogo.jpg" alt="" />
-        </div>
+        <div class="logo-icon"></div>
       </header>
 
       <section class="nav-container">
@@ -31,8 +29,11 @@
 
       <section class="main-content">
         <article class="main-content-item">
-          <div class="main-content-banner"></div>
-
+          <div class="main-banner-container">
+            <div class="main-content-banner banner-1"></div>
+            <div class="main-content-banner banner-2"></div>
+            <div class="main-content-banner banner-3"></div>
+          </div>
           <div class="main-item">
             <div class="item-icon"></div>
             <div>
@@ -43,8 +44,8 @@
         </article>
 
         <form class="main-content-item">
-          <input type="text" />
-          <button type="button">Submit</button>
+          <input type="text" id="input-name" placeholder="Name" />
+          <button type="button" onclick="nextSlide;">Submit</button>
         </form>
       </section>
     </main>
