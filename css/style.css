@@ -1,40 +1,28 @@
-.menu {
-  width: 100%;
-  flex-direction: column;
-}
-
-.logo-icon {
-  margin-bottom: 14px;
-}
-
+/**Mengatur seluruh font web dan background**/
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #03d6fb, #d4f805);
 }
 
+/**Tampilan bar navigasi**/
 nav {
   display: flex;
   justify-content: space-between;
   padding: 12px;
   align-items: center;
-  background: rgb(255, 255, 255); /* Warna background semi-transparan */
-  backdrop-filter: blur(10px); /* Efek kaca buram */
-  -webkit-backdrop-filter: blur(10px); /* Efek kaca buram untuk Safari */
-  border-radius: 8px; /* Opsional: membuat sudut melengkung */
-  border: 1px solid; /* Opsional: menambahkan border semi-transparan */
+  background: rgba(255, 255, 255, 0.3); /* Backgound efek kaca buram */
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo-icon {
-  background-image: url(../assets/ariflogo.jpg);
-  display: flex;
-  height: 50px;
-  width: 50px;
-  background-size: cover;
-}
-
+/* Penampung elemen navigasi */
 .nav-container {
   display: flex;
 }
-
 .nav-item {
   padding: 8px;
   margin: 0 10px;
@@ -42,25 +30,41 @@ nav {
   color: black;
 }
 
-a:hover {
-  color: rgb(0, 0, 0);
+/* agar navigasi tampak bold ketika diarahkan kursor, 
+dan aktif ketika sedang berada di halamannya*/
+.nav-item:hover {
+  font-weight: bold;
+}
+.nav-item.active {
   font-weight: bold;
 }
 
-.main-title {
-  text-align: center;
-  margin: 40px 0;
+/* Logo agent */
+.logo-icon {
+  background-image: url("../assets/ariflogo.png");
+  height: 90px;
+  width: 100px;
+  background-size: cover;
 }
 
+/* Judul home */
+.main-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+/* section 1, Penampung bagian konten pertama */
 .main-content {
-  display: flex;
-  padding: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding: 50px;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 60px;
   display: flex;
   justify-content: space-between;
 }
 
+/* Bagian Pertama dari main content */
 .main-content-item {
   width: 100%;
   display: flex;
@@ -68,71 +72,302 @@ a:hover {
   align-items: center;
 }
 
-.main-banner-container {
-  width: 100%;
-  height: 200px;
-}
-
+/* Tempat menampung gambar autoslide */
 .main-content-banner {
   width: 100%;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 10px;
+  height: 250px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  box-shadow: 3px 3px 16px rgba(66, 81, 245, 0.966);
+}
+/*Tempat menampung gambar yang akan di autoslide*/
+.container {
+  width: 100%;
+  height: 250px;
+}
+/* Style gambar auto slide */
+.images img {
+  width: 100%;
+  height: 250px;
+  display: none;
+}
+/* Agar ketika autoslide gambar yang tampil berganti */
+.images img:first-child {
+  display: block;
 }
 
-.banner-1 {
-  background-image: url(../assets/banner.jpeg);
-}
-
-.banner-2 {
-  background-image: url(../assets/banner2.jpg);
-}
-
-.banner-3 {
-  background-image: url(../assets/banner3.jpeg);
-}
-.main-item {
-  display: flex;
-}
-
-.item-icon {
-  height: 50px;
-  width: 50px;
-  background-image: url(../assets/Mars.jpeg);
-  border-radius: 50%;
-  background-size: cover;
-  margin-right: 10px;
-}
-
+/* Tempat ukuran testimoni */
 .main-item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 20px;
 }
 
+/* Ukuran caption testimoni */
+.caption {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+/* Ukuran profil pengguna */
+.item-icon {
+  height: 50px;
+  width: 50px;
+  background-image: url("../assets/Mars.jpeg");
+  border-radius: 50%;
+  background-size: cover;
+  margin-right: 9px;
+}
+
+/* Batas elemen div pada main-item */
+.main-item div {
+  margin-left: 15px;
+}
+/* Ukuran huruf nama/tempat pada main-item */
+.main-item h6 {
+  margin: 0;
+  font-size: 1.5em;
+}
+.main-item p {
+  margin: 0;
+  font-size: 1em;
+}
+
+/* style alasan pemilihan layanan*/
+.reason {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.item-icon1,
+.item-icon2,
+.item-icon3,
+.item-icon4 {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-size: cover;
+  margin-right: 9px;
+}
+.item-icon1 {
+  background-image: url("../assets/number-1.png");
+}
+.item-icon2 {
+  background-image: url("../assets/number-2.png");
+}
+.item-icon3 {
+  background-image: url("../assets/number-3.png");
+}
+.item-icon4 {
+  background-image: url("../assets/number-4.png");
+}
+
+/* Bagian kedua, kotak pengisian form */
 input {
   width: 75%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid aqua;
+  border: 2px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   font-family: monospace;
-  margin-left: 24px;
-  margin-right: 24px;
 }
 
+/* Pesan eror form validation */
+.error-message {
+  color: red;
+  margin-bottom: 15px;
+  font-size: 15px;
+  align-self: flex-start;
+  margin-left: 100px;
+}
+
+/* Ukuran tombol */
+.tombol {
+  margin-bottom: 100px;
+}
 button {
+  height: 38px;
+  background-color: rgb(104, 188, 214);
+  border: none;
+  padding: 12px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.button1 {
   width: 75%;
-  height: 32px;
-  background-color: bisque;
+}
+.button2 {
+  width: 30%;
+  margin: 0 auto;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Tempat inputan text*/
+label {
+  text-align: left;
+  width: 75%;
+  font-size: 15px;
+}
+/* Form select */
+select {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+/* Setion kedua membagi tampilan our package*/
+.col-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+}
+/* membagi list tempat packages */
+.places {
+  display: flex;
+}
+/* jenis font judul tempat */
+h6 {
+  font-family: cursive;
+}
+/* posisi paragrap */
+.p-list {
+  text-align: start;
+}
+
+.bintang {
+  display: flex;
+}
+h2 {
+  text-align: center;
+  padding: 1px;
+  margin-top: 50px;
+}
+
+/* style icon luar negeri */
+.item-icon2-list {
+  height: 50px;
+  width: 50px;
+  background-image: url("https://cdn-icons-png.flaticon.com/128/4283/4283062.png");
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-right: 9px;
+}
+/* style icon dalam negeri */
+.item-icon2-bintang {
+  height: 50px;
+  width: 50px;
+  background-image: url("https://cdn-icons-png.flaticon.com/128/477/477406.png");
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-right: 9px;
+}
+
+/* style beberapa pembatas */
+.divider {
+  width: 90px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+}
+.divider2 {
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.divider3 {
+  background-color: none;
+  height: 20px;
+  border: none;
+}
+.divider4 {
+  background-color: none;
+  height: 0px;
   border: none;
 }
 
-@media only screen and (max-width: 480px) {
-  .main-content {
+/* posisi teks section call us*/
+.quote {
+  text-align: center;
+  padding: 20px;
+}
+
+/* style footer */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  background: #333;
+  color: white;
+}
+.copyright-text {
+  color: var(--color-lgrey);
+  text-align: center;
+  font-family: "Roboto", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+    "Hiragino Sans", "游ゴシック", YuGothic, "メイリオ", sans-serif;
+  font-weight: 500;
+}
+
+/* Media Queries agar Responsif*/
+@media (max-width: 1024px) {
+  .col-list {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .places,
+  .bintang {
     flex-direction: column;
+  }
+  .main-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-list {
+    padding: 20px;
+  }
+  .main-content {
+    padding: 20px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-item {
+    margin: 5px 0;
+  }
+  .main-item {
+    padding: 10px;
+  }
+  .main-content {
+    padding: 20px;
+    flex-direction: column;
+    margin: 0px;
   }
 }
