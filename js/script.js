@@ -1,40 +1,104 @@
-// ini form
+// Form Validation Functions
+function validateForm(event) {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var ask = document.getElementById("ask").value;
 
-function formValidation() {
-  console.log("Ini Form");
-  let name = document.getElementById("input-name").value;
-  console.log(name);
+  clearErrors();
 
-  //pengecekan nama
-  if (name == "") {
-    alert("Maaf inputan anda kosong!");
+  var isValid = true;
+
+  if (name === "") {
+    showError("name", "*name must be filled out");
+    isValid = false;
+  }
+  if (email === "") {
+    showError("email", "*email must be filled out");
+    isValid = false;
+  }
+  if (ask === "") {
+    showError("ask", "*please select an option");
+    isValid = false;
+  }
+
+  if (!isValid) {
+    event.preventDefault();
   } else {
-    alert("Sukses menginput");
+    alert("Form submitted successfully!");
   }
 }
 
-let indexSlide = 1; //[0, 1, 2]
-showSlide(1);
-
-function nextSlide(n) {
-  showSlide((indexSlide += n));
+function clearErrors() {
+  var errorMessages = document.querySelectorAll(".error-message");
+  errorMessages.forEach(function (msg) {
+    msg.remove();
+  });
 }
 
-function showSlide() {
-  let listImage = document.getElementsByClassName("main-content-banner");
-  console.log(listImage);
+function showError(inputId, message) {
+  var inputElement = document.getElementById(inputId);
+  var errorMessage = document.createElement("div");
+  errorMessage.className = "error-message";
+  errorMessage.style.color = "red";
+  errorMessage.innerText = message;
+  inputElement.parentNode.insertBefore(errorMessage, inputElement.nextSibling);
+}
 
-  //algo mereset index
-  // algoritma untuk mengilangkan gambar
-  let index = 0;
-  while (index < listImage.length) {
-    listImage[index].style.display = "none";
-    index++;
+// Smooth Scroll Navigation Function
+function smoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+}
+
+// Automatic Image Slider Function
+function automaticSlide() {
+  var firstIndex = 0;
+  function slide() {
+    const img = document.querySelectorAll(".images img");
+    img.forEach((pic) => (pic.style.display = "none"));
+    firstIndex++;
+    if (firstIndex > img.length) {
+      firstIndex = 1;
+    }
+    img[firstIndex - 1].style.display = "block";
+    setTimeout(slide, 2000);
+  }
+  slide();
+}
+
+// Bold Navigation on Scroll Function
+function boldNav() {
+  const sections = document.querySelectorAll("main > section, main > article");
+  const navLinks = document.querySelectorAll(".nav-item");
+
+  function changeActiveNav() {
+    let index = sections.length;
+
+    while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+    navLinks.forEach((link) => link.classList.remove("active"));
+    navLinks[index].classList.add("active");
   }
 
-  //memunculkan satu gambar
-  listImage[indexSlide - 1].style.display = "block";
+  changeActiveNav();
+  window.addEventListener("scroll", changeActiveNav);
 }
 
-//aglo untuk auto slide
-//setInterval(() => nextSlide(1), 3000);
+// Initialize all functions
+function init() {
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", validateForm);
+  smoothScroll();
+  automaticSlide();
+  boldNav();
+}
+
+// Run initialization on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", init);

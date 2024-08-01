@@ -3,24 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini Course SE</title>
+    <title>Arif Travel</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <hr class="divider4" id="home" />
     <nav>
       <header>
         <div class="logo-icon"></div>
       </header>
 
-      <section class="nav-container">
-        <a href="" class="nav-item">Home</a>
-        <a href="" class="nav-item">Our Package</a>
-        <a href="" class="nav-item">Contact Us</a>
+      <section class="nav-container" id="navigation">
+        <a class="nav-item" id="nav-home" href="#home">Home</a>
+        <a class="nav-item" id="nav-package" href="#package-section"
+          >Our Package</a
+        >
+        <a class="nav-item" id="nav-call" href="#closing-id">Call Us</a>
       </section>
     </nav>
 
     <main>
-      <article class="main-title">
+      <article main class="main-title">
         <header>
           <h1>Arif Travel</h1>
         </header>
@@ -29,26 +32,249 @@
 
       <section class="main-content">
         <article class="main-content-item">
-          <div class="main-banner-container">
-            <div class="main-content-banner banner-1"></div>
-            <div class="main-content-banner banner-2"></div>
-            <div class="main-content-banner banner-3"></div>
+          <!--Untuk banner otomatis-->
+          <div class="main-content-banner">
+            <!--Tempat menampung gambar-->
+            <div class="container">
+              <!--Gambar-->
+              <div class="images">
+                <img
+                  src="https://v1.indonesia.travel/content/dam/indtravelrevamp/en/destinations/revision-2019/all-revision-destination/baliH.jpg"
+                  alt="Bali"
+                />
+                <img
+                  src="https://yoona.id/wp-content/uploads/2022/04/tempat-wisata-di-korea-selatan-untuk-kpopers.jpg"
+                  alt="Korea Selatan"
+                />
+                <img
+                  src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/120000/120396-Manchester.jpg"
+                  alt="Manchester"
+                />
+                <img
+                  src="https://asset-2.tstatic.net/papuabarat/foto/bank/images/Pulau-Misool-Raja-Ampat-Papua-Barat.jpg"
+                  alt="Papua"
+                />
+                <img
+                  src="https://superlive.id/storage/superadventure/2018/07/26/f8e2debd2147.jpg"
+                  alt="Brazil"
+                />
+              </div>
+            </div>
           </div>
+
+          <!--Tampilan-->
+          <div class="caption">
+            <p>
+              Arif Travel adalah penyedia layanan perjalanan terkemuka yang
+              berdedikasi untuk memberikan pengalaman wisata terbaik bagi para
+              pelanggan. Dengan berbagai pilihan paket wisata menarik, kami
+              mengutamakan kenyamanan dan kepuasan pelanggan dalam setiap
+              perjalanan yang kami tawarkan.
+            </p>
+          </div>
+
           <div class="main-item">
             <div class="item-icon"></div>
+
             <div>
-              <h3>M Arif Rahman Solihin</h3>
-              <p>Gituloh</p>
+              <h6>M Arif Rahman Solihin</h6>
+              <p>Ah begituu wehhh</p>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <!--Alasan memilih agent-->
+          <div class="reason">
+            <p>Keunggulan Arif Travel :</p>
+          </div>
+
+          <!--Alasan pertama-->
+          <div class="main-item">
+            <div class="item-icon1"></div>
+            <div>
+              <p>
+                Pengalaman dan Keahlian: Dengan pengalaman bertahun-tahun di
+                industri pariwisata
+              </p>
+            </div>
+          </div>
+
+          <!--Alasan kedua-->
+          <div class="main-item">
+            <div class="item-icon2"></div>
+            <div>
+              <p>
+                Jaringan Luas: Kerjasama dengan berbagai partner terpercaya,
+              </p>
+            </div>
+          </div>
+
+          <!--Alasan ketiga-->
+          <div class="main-item">
+            <div class="item-icon3"></div>
+            <div>
+              <p>
+                Pelayanan 24/7: Layanan pelanggan kami siap membantu Anda kapan
+                saja, di mana saja.
+              </p>
+            </div>
+          </div>
+
+          <!--Alasan keempat-->
+          <div class="main-item">
+            <div class="item-icon4"></div>
+            <div>
+              <p>
+                Testimoni Positif: Banyak pelanggan kami yang kembali
+                menggunakan layanan Arif Travel
+              </p>
             </div>
           </div>
         </article>
 
-        <form class="main-content-item">
-          <input type="text" id="input-name" placeholder="Name" />
-          <button type="button" onclick="nextSlide;">Submit</button>
+        <!--Tampilan form-->
+        <form class="main-content-item" id="contact-form">
+          <h3>Contact Us</h3>
+          <label for="name"
+            >Sales akan menghubungi Anda 1x12 jam setelah data kami terima.
+          </label>
+          <br /><br />
+          <!--Form nama-->
+          <label for="name">Your Name: </label>
+          <input type="text" placeholder="Namamu" id="name" name="name" />
+          <!--Form email-->
+          <label for="email">Email Address: </label>
+          <input
+            type="text"
+            placeholder="example@gmail.com"
+            id="email"
+            email="email"
+          />
+          <!--Form Pilih-->
+          <label for="ask">What are you interested in? </label>
+          <select id="ask" name="ask">
+            <option value="" disabled selected hidden>Select option</option>
+            <option value="1">Open Trip</option>
+            <option value="2">Solo Traveler</option>
+            <option value="3">Nyetadion</option>
+            <option value="4">Bulan Madu</option>
+            <option value="5">Trip Random</option>
+          </select>
+          <button type="submit" class="button1">Submit</button>
         </form>
       </section>
+
+      <!--Pembatas-->
+      <hr class="divider3" id="package-section" />
+
+      <!--Tampilan Package Travel-->
+      <section class="package">
+        <h2>Our Package</h2>
+
+        <!--Luar negeri-->
+        <div class="col-list">
+          <div class="places">
+            <!--Tempat pertama-->
+            <div class="main-item">
+              <div class="item-icon2-list"></div>
+              <div>
+                <h6>Brazil</h6>
+                <p class="p-list">
+                  Bermain Sepakbola bersama pemain Top Dunia.
+                </p>
+              </div>
+            </div>
+
+            <!--Tempat kedua-->
+            <div class="main-item">
+              <div class="item-icon2-list"></div>
+              <div>
+                <h6>Korea Selatan</h6>
+                <p class="p-list">Industri K-Pop dan Drama Korea</p>
+              </div>
+            </div>
+
+            <!--Tempat ketiga-->
+            <div class="main-item">
+              <div class="item-icon2-list"></div>
+              <div>
+                <h6>Manchester</h6>
+                <p class="p-list">Stadion Oldtrafford dan Manchester United</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <!--Dalam negeri-->
+        <div class="col-list">
+          <div class="bintang">
+            <!--Tempat keempat-->
+            <div class="main-item">
+              <div class="item-icon2-bintang"></div>
+              <div>
+                <h6>Papua</h6>
+                <p class="p-list">
+                  Keindahan alam yang indah di ujung Indonesia.
+                </p>
+              </div>
+            </div>
+
+            <!--Tempat kelima-->
+            <div class="main-item">
+              <div class="item-icon2-bintang"></div>
+              <div>
+                <h6>Bali</h6>
+                <p class="p-list">Pantai dan Wisata yang indah.</p>
+              </div>
+            </div>
+
+            <!--Tempat keenam-->
+            <div class="main-item">
+              <div class="item-icon2-bintang"></div>
+              <div>
+                <h6>Lainnya</h6>
+                <p class="p-list">
+                  Kunjungi cagar budaya dan kuliner menarik lainnya.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Pembatas-->
+      <hr class="divider2" />
+
+      <!--bagian closing-->
+      <section class="closing">
+        <h2 style="margin-top: 50px" id="closing-id">
+          Mari berwisata dengan Arif Travel
+        </h2>
+        <div class="quote">
+          <p>"Mari Healing bersama Arif Travel"</p>
+          <p>"Tunda Kerjaan mu dan mari liburan bersamaku"</p>
+        </div>
+
+        <div class="tombol">
+          <div class="button-container">
+            <button type="button" id="button2" class="button2">
+              Travel Sekarang
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
-    <script src="js/script.js"></script>
+
+    <!--Javascript-->
+    <script src="js\script.js"></script>
+
+    <!--Footer-->
+    <footer>
+      <p id="copyright" class="copyright-text">
+        <span>&copy;Arif Eaaa. All Right Reserved.</span>
+      </p>
+    </footer>
   </body>
 </html>
